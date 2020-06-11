@@ -1,0 +1,22 @@
+{
+  "modelName" : "basicInfo",
+
+  "title" : "Basic Info",
+
+  "fields": [
+
+    { "fieldId"   : "employeeFirstName",
+      "fieldText" : "First Name",
+      "fieldType" : "text",
+      "maxLength" : "100" },
+
+    { "fieldId"   : "employeeLastName",
+      "fieldText" : "Last Name",
+      "fieldType" : "text",
+      "maxLength" : "100" },
+
+    { "fieldId"   : "employeeGrossMonthlySalary",
+      "fieldText" : "Gross Monthly Salary",
+      "fieldType" : "money" }
+  ]
+}

@@ -1,0 +1,78 @@
+<mvc:View
+	controllerName="sap.ui.demo.basicTemplate.controller.Home"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+			id="mySemanticPage"
+			headerPinnable="true"
+			toggleHeaderOnTitleClick="true"
+			preserveHeaderStateOnScroll="false"
+			titleAreaShrinkRatio="1:1.6:1.6"
+			showFooter="{/showFooter}">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n/title}" />
+		</semantic:titleHeading>
+
+		<!-- TitleExpanded content-->
+		<semantic:titleSnappedContent>
+			<Text text="{i18n/titleSnappedContent/text}"/>
+		</semantic:titleSnappedContent>
+
+		<!-- TitleSnapped content-->
+		<semantic:titleExpandedContent>
+			<Text text="{/titleExpandedContent/text}"/>
+		</semantic:titleExpandedContent>
+
+		<!-- Header Content -->
+		<semantic:headerContent>
+		</semantic:headerContent>
+
+		<!-- Content -->
+		<semantic:content>
+			<Table
+					id="idEmployeesTable"
+					inset="false"
+					items="{path:'/ProductCollection'}"
+					class="sapFSemanticPageAlignContent"
+					width="auto">
+
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="Employees" level="H2" />
+						<ToolbarSpacer />
+						<Button id="hireEmployeeButton" text="Hire New Employee" type="Transparent" press="onHireEmployee" />
+					</OverflowToolbar>
+				</headerToolbar>
+
+				<columns>
+					<Column>
+						<Text text="Employee Id"/>
+					</Column>
+					<Column>
+						<Text text="Name"/>
+					</Column>
+					<Column>
+						<Text text="Status"/>
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier title="{EmployeeId}" text="{EmployeeId}"/>
+							<Text text="{Name}"/>
+							<Text text="{Status}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+	</semantic:SemanticPage>
+</mvc:View>
